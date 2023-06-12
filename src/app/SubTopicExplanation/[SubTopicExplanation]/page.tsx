@@ -8,16 +8,14 @@ interface SubTopicExplanationProps {
 const SubTopicExplanation: React.FC<SubTopicExplanationProps> = ({ selectedChapter, filtername }) => {
   return (
     <div>
-        
-        <div className="relative flex items-center justify-center align-middle p-4"><h5 className="text-xl">Explanation</h5></div>
+      <div className="relative flex items-center justify-center align-middle p-4">
+        <h5 className="text-xl">Explanation</h5>
+      </div>
 
-        
-        {selectedChapter ? selectedChapter  : 'No chapter selected'}
-        
-        <div>{filtername}</div>
+      {selectedChapter ? selectedChapter : 'No chapter selected'}
 
-        </div>
-
+      <div>{filtername}</div>
+    </div>
   );
 };
 
