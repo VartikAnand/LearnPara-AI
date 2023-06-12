@@ -1,0 +1,21 @@
+.chapterList {
+    box-sizing: border-box;
+
+
+    background: rgb(255, 255, 255);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    transition: all 0.5s;
+
+    justify-content: center;
+    user-select: none;
+
+    color: black;
+  }
+  
+  .chapterList:hover {
+    border: 1px solid black;
+  }
+  

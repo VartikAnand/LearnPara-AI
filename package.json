@@ -1,0 +1,44 @@
+{
+  "name": "learn-para",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.15",
+    "@heroicons/react": "^2.0.18",
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^13.4.4",
+    "@nextui-org/react": "^1.0.0-beta.13",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.12.0",
+    "@types/node": "20.2.5",
+    "@types/react-dom": "18.2.4",
+    "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
+    "dotenv": "^16.1.4",
+    "eslint": "8.42.0",
+    "eslint-config-next": "13.4.4",
+    "next": "13.4.4",
+    "next-mdx-remote": "^4.4.1",
+    "next-sanity": "^4.3.3",
+    "openai": "^3.2.1",
+    "postcss": "8.4.24",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.9.0",
+    "remark": "^14.0.3",
+    "remark-html": "^15.0.2",
+    "sanity": "^3.12.0",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.1.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.8"
+  }
+}
