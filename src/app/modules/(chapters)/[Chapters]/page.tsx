@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
 import ChapterListCard from "@/components/Cards/ChapterListCard/ChapterListCard";
@@ -44,8 +44,9 @@ const Page = () => {
       setFilteredChapters(filteredChapters);
     }
   }, [responseData]);
+  
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setIsLoading(true);
     setError(null);
 
@@ -72,7 +73,7 @@ const Page = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     if (chapter) {
