@@ -6,7 +6,7 @@ import ChapterListCard from "@/components/Cards/ChapterListCard/ChapterListCard"
 import ShareBtn from "@/components/ReusableComponents/ShareBtn/ShareBtn";
 import NameLoader from "@/components/Loders/nameLoder/nameLoder";
 import Tryagain from "@/components/Loders/tryagain/tryagain";
-import SubTopicExplanation from "../../SubTopicExplanation/[SubTopicExplanation]/page";
+import SubTopicExplanation from "@/app/SubTopicExplanation/[SubTopicExplanation]/page";
 
 interface Chapter {
   chapter: number;
