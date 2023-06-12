@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import React, { useEffect, useState, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
@@ -18,7 +18,6 @@ const Page = () => {
   const searchParams = useSearchParams();
   const chapter = decodeURIComponent(searchParams.toString());
 
-  const [searchQuery, setSearchQuery] = useState("");
   const [responseData, setResponseData] = useState<Chapter[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -79,7 +78,7 @@ const Page = () => {
     if (chapter) {
       fetchData();
     }
-  }, [chapter]);
+  }, [chapter, fetchData]); // Include fetchData in the dependency array
 
   const generatePrompt = (subTopic: string) => {
     const capitalizedSubject =
@@ -122,59 +121,58 @@ Subtopic4: 2. The if statement in java
   } else if (chapters && chapters.length > 0) {
     chapterData = chapters;
   }
-
   return (
     <div className="">
-      <section className="flex px-2 justify-between pt-3">
-        {/* Chapter Header */}
-        <div className="">
-          <h1 className="text-2xl font-medium">{filteredChapter}</h1>
-        </div>
-        <div className="lg:pr-5">
-          <ShareBtn />
-        </div>
-      </section>
-      <div className="border-b-2 bg-white mt-4"></div>
-      <section className="flex flex-col lg:flex-row md:flex-row md:flex-wrap gap-2 p-2 pt-2 h-[100%]">
-        <div className="md:w-1/3 lg:w-1/4 sm:w-full">
-          {isLoading && (
-            <div className="flex flex-col justify-center align-middle items-center pt-10 m-10 gap-5">
-              <NameLoader />
-              <p>Generating best Modules For You on {filteredChapter}</p>
-            </div>
-          )}
-          {error && (
-            <div className="flex justify-center align-middle items-center pt-10 m-10">
-              <Tryagain /> : {error}
-            </div>
-          )}
-          <div>
-            <div className="relative flex items-center justify-center align-middle p-4">
-              <h5 className="text-xl">Sub Topics For This Modules</h5>
-            </div>
-
-            {chapters &&
-              chapters
-                .slice(0, lastIndex + 1)
-                .map((chapter, index) => (
-                  <ChapterListCard
-                    key={index}
-                    chapterName={chapter}
-                    onClick={handleChapterClick}
-                  />
-                ))}
+    <section className="flex px-2 justify-between pt-3">
+      {/* Chapter Header */}
+      <div className="">
+        <h1 className="text-2xl font-medium">{filteredChapter}</h1>
+      </div>
+      <div className="lg:pr-5">
+        <ShareBtn />
+      </div>
+    </section>
+    <div className="border-b-2 bg-white mt-4"></div>
+    <section className="flex flex-col lg:flex-row md:flex-row md:flex-wrap gap-2 p-2 pt-2 h-[100%]">
+      <div className="md:w-1/3 lg:w-1/4 sm:w-full">
+        {isLoading && (
+          <div className="flex flex-col justify-center align-middle items-center pt-10 m-10 gap-5">
+            <NameLoader />
+            <p>Generating best Modules For You on {filteredChapter}</p>
           </div>
-        </div>
-        <div className=" p-2" ref={scrollRef}>
-          {/* Render the explanation for the selected chapter here */}
+        )}
+        {error && (
+          <div className="flex justify-center align-middle items-center pt-10 m-10">
+            <Tryagain /> : {error}
+          </div>
+        )}
+        <div>
+          <div className="relative flex items-center justify-center align-middle p-4">
+            <h5 className="text-xl">Sub Topics For This Modules</h5>
+          </div>
 
-          <SubTopicExplanation
-            selectedChapter={selectedChapter}
-            filtername={filteredChapter}
-          />
+          {chapters &&
+            chapters
+              .slice(0, lastIndex + 1)
+              .map((chapter, index) => (
+                <ChapterListCard
+                  key={index}
+                  chapterName={chapter}
+                  onClick={handleChapterClick}
+                />
+              ))}
         </div>
-      </section>
-    </div>
+      </div>
+      <div className=" p-2" ref={scrollRef}>
+        {/* Render the explanation for the selected chapter here */}
+
+        <SubTopicExplanation
+          selectedChapter={selectedChapter}
+          filtername={filteredChapter}
+        />
+      </div>
+    </section>
+  </div>
   );
 };
 
