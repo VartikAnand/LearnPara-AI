@@ -169,11 +169,11 @@ Subtopic4: 2. The if statement in java
         </div>
         <div className=" p-2" ref={scrollRef}>
           {/* Render the explanation for the selected chapter here */}
-{/* 
+
           <SubTopicExplanation
             selectedChapter={selectedChapter}
             filtername={filteredChapter.toString()}
-          /> */}
+          />
         </div>
       </section>
     </div>
