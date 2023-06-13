@@ -1,3 +1,4 @@
+import React from "react";
 import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
 import { Inter, Merriweather } from "next/font/google";

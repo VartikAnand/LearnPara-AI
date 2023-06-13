@@ -1,8 +1,8 @@
 {
-  "extends": [
-    "next/core-web-vitals"
-  ],
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
   "rules": {
-    "no-unused-vars": "off"
+    "no-unused-vars": 0,
+    "camelcase": "off"
+
   }
 }

@@ -12,8 +12,6 @@ interface Chapter {
 
 interface ChapterCardProps {
   chapterData: Chapter[];
-  text_response: string;
-  chapter: string;
 }
 
 const ChapterCard: React.FC<ChapterCardProps> = ({ chapterData }) => {
@@ -25,15 +23,13 @@ const ChapterCard: React.FC<ChapterCardProps> = ({ chapterData }) => {
         <div className="card" key={chapter.id}>
           <Link href={`/modules/[chapters]?chapters=${encodeURIComponent(chapter)}`}>
             <div className="flex flex-col items-center justify-center">
-              <div
-                className={`flex rounded-full w-12 h-12 text-3xl text-green-600 justify-center align-middle items-center`}
-              >
+              <div className={`flex rounded-full w-12 h-12 text-3xl text-green-600 justify-center align-middle items-center`}>
                 <BsBodyText />
               </div>
               <h1>Module {index + 1}</h1>
               <p className="px-5">
-                {chapter.replace(/^\d+(?:\.\s*)?/, "")}
-              </p>{" "}
+                {chapter.replace(/^\d+(?:\.\s*)?/, "") ?? ""}
+              </p>
             </div>
           </Link>
         </div>
