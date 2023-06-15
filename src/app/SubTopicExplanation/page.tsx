@@ -9,11 +9,14 @@ interface SubTopicExplanationProps {
   filtername: string;
 }
 
-const SubTopicExplanation: React.FC<SubTopicExplanationProps> = ({ selectedChapter, filtername }) => {
+const SubTopicExplanation: React.FC<SubTopicExplanationProps> = ({
+  selectedChapter,
+  filtername,
+}) => {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [responseData, setResponseData] = useState(null);
-  const [definition, setDefinition] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [responseData, setResponseData] = useState<any | null>(null);
+  const [definition, setDefinition] = useState<string>("");
   const [explanation, setExplanation] = useState<string[]>([]);
   const [importance, setImportance] = useState<string[]>([]);
 
@@ -46,7 +49,7 @@ const SubTopicExplanation: React.FC<SubTopicExplanationProps> = ({ selectedChapt
       url: "https://chatgpt-4-bing-ai-chat.p.rapidapi.com/ask",
       headers: {
         "content-type": "application/json",
-        "x-rapidapi-key": process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+        "x-rapidapi-key": process.env.NEXT_PUBLIC_OPENAI_API_KEY!,
         "x-rapidapi-host": "chatgpt-4-bing-ai-chat.p.rapidapi.com",
       },
       data: {
@@ -96,21 +99,18 @@ const SubTopicExplanation: React.FC<SubTopicExplanationProps> = ({ selectedChapt
     setExplanation(extractedExplanation);
   }, [responseData]);
 
-
   return (
     <div className="min-w-screen">
       <div className="relative text-xl gap-2 flex items-center justify-center align-middle p-4  border-b-2 lg:border-hidden">
         {selectedChapter ? (
           <div>
             {loading ? (
-
-<div className="flex items-center justify-center h-screen">
-<div className="gap-10">
-  <BookLoadingIndicator />
-  <div className=" pt-20 mt-10">Loading...</div>
-</div>
-</div>
-            
+              <div className="flex items-center justify-center h-screen">
+                <div className="gap-10">
+                  <BookLoadingIndicator />
+                  <div className="pt-20 mt-10">Loading...</div>
+                </div>
+              </div>
             ) : (
               <>
                 <div className="text-2xl font-semibold ">{selectedChapter}</div>
@@ -130,20 +130,16 @@ const SubTopicExplanation: React.FC<SubTopicExplanationProps> = ({ selectedChapt
                     </ul>
                   </div>
                 )}
-<DetailExplanation Explantion={responseData?.text_response} />
-              
+                <DetailExplanation Explanation={responseData?.text_response} />
               </>
             )}
           </div>
         ) : (
-<div className="flex items-center justify-center">
-            
-            Select Some Topics To Start</div>
+          <div className="flex items-center justify-center">
+            Select Some Topics To Start
+          </div>
         )}
       </div>
-
-      
-      {/* <div>{responseData?.text_response}</div> */}
     </div>
   );
 };

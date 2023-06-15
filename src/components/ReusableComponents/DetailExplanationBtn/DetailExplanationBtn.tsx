@@ -1,13 +1,17 @@
-import React from 'react'
-import "./DetailExplanationBtn.css"
+import React, { FC, MouseEventHandler } from 'react';
+import "./DetailExplanationBtn.css";
 
-const DetailExplanationBtn = ({BtnName,Click}) => {
-  return (
-    <button className="button px-10 py-2 border-green-500" onClick={Click}>
- {BtnName}
-
-</button>
-  )
+interface DetailExplanationBtnProps {
+  BtnName: string;
+  Click: MouseEventHandler<HTMLButtonElement>;
 }
 
-export default DetailExplanationBtn
+const DetailExplanationBtn: FC<DetailExplanationBtnProps> = ({ BtnName, Click }) => {
+  return (
+    <button className="button px-10 py-2 border-green-500" onClick={Click}>
+      {BtnName}
+    </button>
+  );
+};
+
+export default DetailExplanationBtn;
