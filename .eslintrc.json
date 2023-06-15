@@ -2,7 +2,9 @@
   "extends": ["next", "next/core-web-vitals", "eslint:recommended", "prettier"],
   "rules": {
     "no-unused-vars": 0,
-    "camelcase": "off"
+    "camelcase": "off",
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off"
 
   }
 }
