@@ -1,0 +1,41 @@
+.button {
+    border: 2px solid #00ff0d;
+    
+    line-height: 52px;
+    border-radius: 10px;
+    font-weight: 600;
+    height: 55px;
+    overflow: hidden;
+    padding: 0 30px 0 ;
+    position: relative;
+    transition: all .5s ease;
+    z-index: 0;
+  }
+  
+  button:after {
+    content: "";
+    height: 100%;
+    left: -35%;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(to right, #00ff0d, #00b30a); 
+    -webkit-transform: skew(30deg);
+    transform: skew(30deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    transition: all .3s ease-in;
+    transition-duration: .6s;
+    width: 0;
+    z-index: -1;
+  }
+  
+  button:hover {
+    color: #fff;
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+  }
+  
+  button:hover:after {
+    height: 100%;
+    width: 135%;
+  }

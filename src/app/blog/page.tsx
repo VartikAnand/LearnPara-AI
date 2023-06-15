@@ -1,50 +1,33 @@
-// 'use client'
-// import { useRouter } from 'next/router';
-// import React from 'react';
+'use client'
+import { useEffect, useState } from 'react';
 
-// const ChapterList = () => {
+const ParagraphFilter = () => {
+  const [importancePoints, setImportancePoints] = useState<string[]>([]);
 
+  useEffect(() => {
+    const paragraph = `3. Importance: 1. [[Interfaces provide a way to achieve abstraction in C#. They allow objects to interact with each other without knowing their implementation details[4][3].]] 2. [[Interfaces provide a way to achieve multiple inheritances in C#. A class can implement multiple interfaces[5][5].]] 3. [[Interfaces provide a way to achieve loose coupling between objects in C#. By using interfaces, we can change the implementation of a class without affecting the code that uses it[1][2].]]`;
 
-//   const responseData = ''
+    const importanceRegex = /\d+\.\s+\[\[(.*?)\]\]/g;
+    const importanceMatches = paragraph.match(importanceRegex);
 
-//   const sentence = responseData;
-//     const textResponse = sentence;
-//   const pattern = /\d+\.\s([^0-9]+)/g;
-//   const chapters = textResponse.match(pattern);
-//   const chapters1 = textResponse.match(/Chapter \d+: .+?(?= Chapter \d+:|$)/g);
+    if (importanceMatches) {
+      const extractedImportancePoints: string[] = importanceMatches.map((match) =>
+        match.substring(match.indexOf('[[') + 2, match.indexOf(']]'))
+      );
+      setImportancePoints(extractedImportancePoints);
+    }
+  }, []);
 
-//   const lastIndex = chapters?.length ? chapters.length - 2 : -1;
-
-//   let chapterData = [];
-//   if (chapters1 && chapters1.length > 0) {
-//     chapterData = chapters1;
-//   } else if (chapters && chapters.length > 0) {
-//     chapterData = chapters;
-//   }
-
-//   return (
-//     <div>
-//       <h1>Chapter List</h1>
-//       {chapterData.length > 0 ? (
-//         <ul>
-//           {chapterData.map((chapter, index) => (
-//             <li key={index}>{chapter}</li>
-//           ))}
-//         </ul>
-//       ) : (
-//         <p>No chapters found.</p>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default ChapterList;
-import React from 'react'
-
-const Blog = () => {
   return (
-    <div>Blog</div>
-  )
-}
+    <div>
+      <h1>Importance Points:</h1>
+      <ul>
+        {importancePoints.map((point, index) => (
+          <li key={index}>{point}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-export default Blog
+export default ParagraphFilter;

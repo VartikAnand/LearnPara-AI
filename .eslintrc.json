@@ -1,5 +1,5 @@
 {
-  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended", "prettier"],
   "rules": {
     "no-unused-vars": 0,
     "camelcase": "off"

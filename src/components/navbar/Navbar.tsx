@@ -30,10 +30,10 @@ const Navbar = () => {
 
   return (
    <header>
-      <div className="hidden lg:block ">
+      <div className="hidden lg:block shadow-md">
       
         {/* hide on small and medium screens, show on large screens */}
-        <div className={`px-4 container mx-auto py-4 shadow-md ${styles.container}`}>
+        <div className={`px-4 container mx-auto py-4  ${styles.container}`}>
           <Link href="/" className={styles.logo}>
             LearnPara
           </Link>

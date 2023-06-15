@@ -129,18 +129,23 @@ You can customize the chapter names based on your preference. Make sure to numbe
         </div>
       </div>
 
-      <section className="items-center justify-center align-middle">
-        {isLoading && <div className=" flex  flex-col justify-center align-middle items-center pt-10 m-10 gap-5">
-          <NameLoader/> 
-          <p>Generating best Modules For You on {searchQuery}</p>
-          
-          </div>}
-        {error && <div className="flex justify-center align-middle items-center pt-10 m-10">
-          <Tryagain/> : {error}</div>}
-        {chapterData && (
-          <ChapterCard chapterData={chapterData} />
-        )}
-      </section>
+      <section className="flex items-center justify-center ">
+  {isLoading && (
+    <div className="flex flex-col items-center justify-center pt-10 m-10 gap-5">
+      <NameLoader/>
+      <p>Generating Modules on {searchQuery}</p>
+    </div>
+  )}
+  {error && (
+    <div className="flex items-center justify-center pt-10 m-10">
+      <Tryagain/> : {error}
+    </div>
+  )}
+  {chapterData && (
+    <ChapterCard chapterData={chapterData} />
+  )}
+</section>
+
     </section>
   );
 };
