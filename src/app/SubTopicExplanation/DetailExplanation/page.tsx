@@ -1,7 +1,10 @@
 'use client'
-
 import React, { useState } from 'react';
 import './DetailExplanationBtn.css';
+import Example from '../SubTopicCompoenents/Example/page';
+import QueAns from '../SubTopicCompoenents/QueAns/page';
+import QuizTest from '../SubTopicCompoenents/QuizTest/page';
+import Simplify from '../SubTopicCompoenents/Simplify/page';
 
 interface DetailExplanationProps {
   Explanation: string;
@@ -9,20 +12,22 @@ interface DetailExplanationProps {
 
 const DetailExplanation: React.FC<DetailExplanationProps> = ({ Explanation }) => {
   const [currentPage, setCurrentPage] = useState('');
+  const [data, setData] = useState('');
 
   const handleClick = (pageName: string) => {
     setCurrentPage(pageName);
+    setData(Explanation);
   };
 
   const renderPage = () => {
     if (currentPage === 'Simplify') {
-      return <div>Simplify Page</div>;
+      return <Simplify Data={data} />;
     } else if (currentPage === 'Example') {
-      return <div>Example Page</div>;
+      return <Example Data={data} />;
     } else if (currentPage === 'Q/A') {
-      return <div>Q/A Page</div>;
+      return <QueAns Data={data} />;
     } else if (currentPage === 'Take Test') {
-      return <div>Take Test Page</div>;
+      return <QuizTest Data={data} />;
     }
     return null;
   };
@@ -47,7 +52,7 @@ const DetailExplanation: React.FC<DetailExplanationProps> = ({ Explanation }) =>
         </div>
         <div>
           <button className='button' onClick={() => handleClick('Take Test')}>
-            Take Test
+            Quiz
           </button>
         </div>
       </div>

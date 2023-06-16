@@ -120,12 +120,12 @@
 // };
 
 // export default Hero;
+import UnderWorking from '@/components/UnderCounstuction/UnderWorking/UnderWorking'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
-  )
+<UnderWorking/>  )
 }
 
 export default page

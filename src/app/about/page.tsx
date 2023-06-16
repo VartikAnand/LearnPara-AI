@@ -1,8 +1,9 @@
+import Coding from '@/components/UnderCounstuction/Coding/Coding'
 import React from 'react'
 
 const About = () => {
   return (
-    <div>About</div>
+   <Coding/>
   )
 }
 

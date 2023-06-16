@@ -7,7 +7,8 @@ import styles from "./navbar.module.css";
 import { FiMenu, FiX } from "react-icons/fi";
 import "./navbar.module.css";
 import DarkModeBtn from "../ReusableComponents/DarkModeBtn/darkModeBtn";
-
+import LearnParaLogo from '/public/LogoLp.png';
+import Image from 'next/image';
 const Navbar = () => {
   const isDarkColor = (color: string): boolean => {
     const hexColor = color.replace("#", "");
@@ -35,7 +36,8 @@ const Navbar = () => {
         {/* hide on small and medium screens, show on large screens */}
         <div className={`px-4 container mx-auto py-4  ${styles.container}`}>
           <Link href="/" className={styles.logo}>
-            LearnPara
+            <div className="flex gap-2"><Image src={LearnParaLogo} alt="logo"  height={30} /><h1>LearnPara</h1></div>
+            
           </Link>
           
           <div className={`flex items-center ${styles.links}`}>
@@ -66,7 +68,7 @@ const Navbar = () => {
       <header className="lg:hidden">
         <div className="flex shadow-md items-center justify-between p-2">
           <Link href="/" className={styles.logo}>
-            LearnPara
+          <div className="flex gap-2"><Image src={LearnParaLogo} alt="logo"  height={30} /><h1>LearnPara</h1></div>
           </Link>
 
           {/* Button dropdown */}
