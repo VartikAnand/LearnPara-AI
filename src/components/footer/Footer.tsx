@@ -1,48 +1,62 @@
-import { footerLinks } from "@/context";
-import Image from "next/image";
-import Link from "next/link";
+import { ReactElement } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import FooterLogo from '/public/circleLp.png';
+import { footerLinks } from '@/context';
 
+const currentYear = new Date().getFullYear();
 
-const Footer = () => (
-  <footer className='flex flex-col text-black-100  mt-5 border-t border-gray-100'>
-    <div className='flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10'>
-      <div className='flex flex-col justify-start items-start gap-6'>
-        <Image src='' alt='logo' width={118} height={18} className='object-contain' />
-        <p className='text-base text-gray-700'>
-        LearnPara<br />
-          All Rights Reserved &copy;
+interface LinkItem {
+  title: string;
+  icon?: React.ElementType;
+  url: string;
+}
+
+interface FooterLink {
+  title: string;
+  links: LinkItem[];
+}
+
+const Footer = (): ReactElement => (
+  <footer className="flex flex-col text-black-100 mt-5 border-t border-gray-100">
+    <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10">
+      <div className="flex flex-col justify-start items-start gap-6">
+        <Image src={FooterLogo} alt="logo" width={45} className="object-contain" />
+        <p className="text-base font-semibold">
+          LearnPara<br />
+          All Rights Reserved &copy; {currentYear}
         </p>
       </div>
 
       <div className="footer__links grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {footerLinks.map((item) => (
-        <div key={item.title} className="footer__link">
-          <h3 className="font-bold">{item.title}</h3>
-          <div className="flex flex-col gap-5">
-            {item.links.map((link) => (
-              <Link
-                key={link.title}
-                href={link.url}
-                className="text-gray-500"
-              >
-                {link.title}
-              </Link>
-            ))}
+        {footerLinks.map((item: FooterLink) => (
+          <div key={item.title} className="footer__link">
+            <h2 className="font-bold text-xl">{item.title}</h2>
+            <div className="flex flex-col gap-5 py-2">
+              {item.links.map((link: LinkItem) => (
+                <Link key={link.title} href={link.url} passHref={true}>
+                  <span className=" text-lg flex gap-2 justify-self-auto hover:text-green-500 active:text-green-500">
+                    {link.icon && <link.icon />}
+                    <span>{link.title}</span> {/* Render the icon if available */}
+                    
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
     </div>
 
-    <div className='flex justify-between items-center align-middle flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10'>
-      <p>@2023 LearnPara. All rights reserved</p>
+    <div className="flex justify-between items-center align-middle flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10 ">
+      <p className='hover:text-green-500'>&copy;{currentYear} LearnPara. All rights reserved</p>
 
       <div className="footer__copyrights-link">
-        <Link href="/" className="text-gray-500">
-          Privacy & Policy
+        <Link href="/" passHref={true}>
+          <p className="hover:text-green-500">Privacy & Policy</p>
         </Link>
-        <Link href="/" className="text-gray-500">
-          Terms & Condition
+        <Link href="/" passHref={true}>
+          <p className="hover:text-green-500">Terms & Condition</p>
         </Link>
       </div>
     </div>
