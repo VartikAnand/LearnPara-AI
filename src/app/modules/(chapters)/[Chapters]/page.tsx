@@ -146,7 +146,7 @@ const Page: React.FC = () => {
           {isLoadingOrError ? (
             <div className="flex flex-col justify-center align-middle items-center pt-10 m-10 gap-5">
               {isLoading ? <NameLoader /> : <Tryagain />}
-              <p>{isLoading ? `Generating best Lesson` : error}</p>
+              <p>{isLoading ? `Generating Best Topic` : error}</p>
             </div>
           ) : (
             <div>
