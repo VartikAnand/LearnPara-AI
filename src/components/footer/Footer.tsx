@@ -1,14 +1,14 @@
-import React, { ReactElement } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import React from "react";
+import FooterLogo from '/public/circleLp.png';
 import { footerLinks } from '@/context';
-import FooterLogo from '../public/circleLp.png';
 
 const currentYear = new Date().getFullYear();
 
 interface LinkItem {
   title: string;
-  icon?: React.ElementType;
+  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   url: string;
 }
 
@@ -17,7 +17,7 @@ interface FooterLink {
   links: LinkItem[];
 }
 
-const Footer = (): ReactElement => (
+const Footer = () => (
   <footer className="flex flex-col text-black-100 mt-5 border-t border-gray-100">
     <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10">
       <div className="flex flex-col justify-start items-start gap-6">
@@ -35,10 +35,10 @@ const Footer = (): ReactElement => (
             <div className="flex flex-col gap-5 py-2">
               {item.links.map((link: LinkItem) => (
                 <Link key={link.title} href={link.url} passHref={true}>
-                  <a className=" text-lg flex gap-2 justify-self-auto hover:text-green-500 active:text-green-500">
+                  <p className=" text-lg flex gap-2 justify-self-auto hover:text-green-500 active:text-green-500">
                     {link.icon && <link.icon />}
-                    <span>{link.title}</span> {/* Render the icon if available */}
-                  </a>
+                    <span>{link.title}</span>
+                  </p>
                 </Link>
               ))}
             </div>
@@ -52,10 +52,10 @@ const Footer = (): ReactElement => (
 
       <div className="footer__copyrights-link">
         <Link href="/" passHref={true}>
-          <a className="hover:text-green-500">Privacy & Policy</a>
+          <p className="hover:text-green-500">Privacy & Policy</p>
         </Link>
         <Link href="/" passHref={true}>
-          <a className="hover:text-green-500">Terms & Condition</a>
+          <p className="hover:text-green-500">Terms & Condition</p>
         </Link>
       </div>
     </div>
