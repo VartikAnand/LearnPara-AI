@@ -18,7 +18,7 @@ interface Chapter {
 const Page: React.FC = () => {
   const searchParams = useSearchParams();
   const chapter = decodeURIComponent(searchParams.toString());
-  console.log({searchParams})
+ 
 
   const [responseData, setResponseData] = useState<Chapter[]>([]);
   const [isLoading, setIsLoading] = useState(false);

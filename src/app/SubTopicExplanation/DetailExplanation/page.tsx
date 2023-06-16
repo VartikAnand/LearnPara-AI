@@ -1,27 +1,58 @@
-import React from 'react';
-import DetailExplanationBtn from '@/components/ReusableComponents/DetailExplanationBtn/DetailExplanationBtn';
+'use client'
+
+import React, { useState } from 'react';
+import './DetailExplanationBtn.css';
 
 interface DetailExplanationProps {
   Explanation: string;
 }
 
 const DetailExplanation: React.FC<DetailExplanationProps> = ({ Explanation }) => {
-  const handleClick = () => {
-    // Handle the button click here
+  const [currentPage, setCurrentPage] = useState('');
+
+  const handleClick = (pageName: string) => {
+    setCurrentPage(pageName);
+  };
+
+  const renderPage = () => {
+    if (currentPage === 'Simplify') {
+      return <div>Simplify Page</div>;
+    } else if (currentPage === 'Example') {
+      return <div>Example Page</div>;
+    } else if (currentPage === 'Q/A') {
+      return <div>Q/A Page</div>;
+    } else if (currentPage === 'Take Test') {
+      return <div>Take Test Page</div>;
+    }
+    return null;
   };
 
   return (
-    <section className=''>
-      <div className='grid  md:grid-cols-2 grid-cols-1 justify-start'>
-        {/* <div className='flex gap-4 mb-3'>
-          <DetailExplanationBtn BtnName={'Q/A'} Click={handleClick} />
-          <DetailExplanationBtn BtnName={'Simplify'} Click={handleClick} />
+    <section className='flex flex-col'>
+      <div className='grid grid-cols-2 gap-4 lg:grid-cols-6 sm:grid-cols-2'>
+        <div>
+          <button className='button' onClick={() => handleClick('Simplify')}>
+            Simplify
+          </button>
         </div>
-        <div className='flex gap-2'>
-          <DetailExplanationBtn BtnName={'Example'} Click={handleClick} />
-          <DetailExplanationBtn BtnName={'Take Test'} Click={handleClick} />
-        </div> */}
+        <div>
+          <button className='button' onClick={() => handleClick('Example')}>
+            Example
+          </button>
+        </div>
+        <div>
+          <button className='button' onClick={() => handleClick('Q/A')}>
+            Q/A
+          </button>
+        </div>
+        <div>
+          <button className='button' onClick={() => handleClick('Take Test')}>
+            Take Test
+          </button>
+        </div>
       </div>
+
+      <div className='mt-4'>{renderPage()}</div>
     </section>
   );
 };
