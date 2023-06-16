@@ -1,8 +1,8 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import FooterLogo from '/public/circleLp.png';
 import { footerLinks } from '@/context';
+import FooterLogo from '../public/circleLp.png';
 
 const currentYear = new Date().getFullYear();
 
@@ -35,11 +35,10 @@ const Footer = (): ReactElement => (
             <div className="flex flex-col gap-5 py-2">
               {item.links.map((link: LinkItem) => (
                 <Link key={link.title} href={link.url} passHref={true}>
-                  <span className=" text-lg flex gap-2 justify-self-auto hover:text-green-500 active:text-green-500">
+                  <a className=" text-lg flex gap-2 justify-self-auto hover:text-green-500 active:text-green-500">
                     {link.icon && <link.icon />}
                     <span>{link.title}</span> {/* Render the icon if available */}
-                    
-                  </span>
+                  </a>
                 </Link>
               ))}
             </div>
@@ -53,10 +52,10 @@ const Footer = (): ReactElement => (
 
       <div className="footer__copyrights-link">
         <Link href="/" passHref={true}>
-          <p className="hover:text-green-500">Privacy & Policy</p>
+          <a className="hover:text-green-500">Privacy & Policy</a>
         </Link>
         <Link href="/" passHref={true}>
-          <p className="hover:text-green-500">Terms & Condition</p>
+          <a className="hover:text-green-500">Terms & Condition</a>
         </Link>
       </div>
     </div>
