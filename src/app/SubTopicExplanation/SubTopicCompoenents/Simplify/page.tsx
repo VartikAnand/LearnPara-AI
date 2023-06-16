@@ -1,4 +1,5 @@
 'use client'
+import Coding from '@/components/UnderCounstuction/Coding/Coding';
 import React, { useState } from 'react';
 
 interface SimplifyProps {
@@ -11,7 +12,8 @@ const Simplify: React.FC<SimplifyProps> = ({ Data }) => {
   return (
     <div>
       <h2>Simplify</h2>
-      <p>{Data}</p>
+      <Coding/>
+      {/* <p>{Data}</p> */}
     </div>
   );
 };

@@ -1,8 +1,13 @@
+import Coding from '@/components/UnderCounstuction/Coding/Coding'
 import React from 'react'
 
 const QuizTest = () => {
   return (
-    <div>QuizTest</div>
+    <div>
+      
+      <Coding/>
+
+      QuizTest</div>
   )
 }
 
