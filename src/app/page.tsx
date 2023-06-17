@@ -2,7 +2,7 @@
 
 import Hero from "@/components/Hero/hero";
 import React, { useState, useEffect } from "react";
-
+import { metadata } from "./layout";
 const Page = () => {
   const subjects = ["Java", "Python", "C++", "IOT", "DTP"];
   const [currentSubject, setCurrentSubject] = useState(subjects[0]);
