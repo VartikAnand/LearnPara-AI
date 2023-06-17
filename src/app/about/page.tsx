@@ -1,10 +1,9 @@
-import Coding from '@/components/UnderCounstuction/Coding/Coding'
 import React from 'react'
 
-const About = () => {
+const page = () => {
   return (
-   <Coding/>
+    <div>page</div>
   )
 }
 
-export default About
+export default page
