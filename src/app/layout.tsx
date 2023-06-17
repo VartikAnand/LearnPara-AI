@@ -20,7 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
       <meta name="google-site-verification" content="Rf1xiYHF5FQMhnksp5qPo-lnwlNnOk80lfAj0-U2GrY" />
+
+      </head>
       <body className={inter.className}>
 
         <ThemeProvider>
