@@ -13,9 +13,9 @@ export const footerLinks = [
     ],
   },
   {
-    title: "Company",
+    title: "Featured",
     links: [
-      { title: "Feature's", url: "/" },
+      
       { title: "Blog", url: "/blog" },
       { title: "Invite a friend", url: "/" },
     ],
