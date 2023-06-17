@@ -4,8 +4,9 @@ import React from 'react'
 
 const loading = () => {
   return (
-    <NameLoader/>
-
+   
+      <NameLoader/>
+ 
     )
 }
 

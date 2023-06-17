@@ -51,10 +51,10 @@ const Footer = () => (
       <p className='hover:text-green-500'>&copy;{currentYear} LearnPara. All rights reserved</p>
 
       <div className="footer__copyrights-link">
-        <Link href="/" passHref={true}>
+        <Link href="/about/PrivacyPolicy" passHref={true}>
           <p className="hover:text-green-500">Privacy & Policy</p>
         </Link>
-        <Link href="/" passHref={true}>
+        <Link href="/about/PrivacyPolicy" passHref={true}>
           <p className="hover:text-green-500">Terms & Condition</p>
         </Link>
       </div>
