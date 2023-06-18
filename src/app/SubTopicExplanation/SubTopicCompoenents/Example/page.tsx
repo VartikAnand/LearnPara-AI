@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const Example = () => {
-  return (
-    <div>Example</div>
-  )
+interface ExampleProps {
+  Data: string;
 }
 
-export default Example
+const Example: React.FC<ExampleProps> = ({ Data }) => {
+  return <div>Example</div>;
+};
+
+export default Example;

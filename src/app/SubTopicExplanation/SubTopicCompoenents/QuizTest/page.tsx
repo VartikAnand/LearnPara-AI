@@ -1,14 +1,17 @@
-import Coding from '@/components/UnderCounstuction/Coding/Coding'
-import React from 'react'
+import Coding from '@/components/UnderCounstuction/Coding/Coding';
+import React from 'react';
 
-const QuizTest = () => {
-  return (
-    <div>
-      
-      <Coding/>
-
-      QuizTest</div>
-  )
+interface SimplifyProps {
+  Data: string;
 }
 
-export default QuizTest
+const QuizTest: React.FC<SimplifyProps> = ({ Data }) => {
+  return (
+    <div>
+      <Coding />
+      QuizTest
+    </div>
+  );
+};
+
+export default QuizTest;
