@@ -24,7 +24,6 @@
     "axios": "^1.4.0",
     "dotenv": "^16.1.4",
     "eslint-config-next": "13.4.4",
-    "firebase": "^9.22.2",
     "next": "^13.4.4",
     "next-mdx-remote": "^4.4.1",
     "next-sanity": "^4.3.3",
