@@ -130,7 +130,7 @@ const SubTopicExplanation: React.FC<SubTopicExplanationProps> = ({
                     </ul>
                   </div>
                 )}
-                <DetailExplanation Explanation={responseData?.text_response} />
+                <DetailExplanation Explanantion={responseData?.text_response || ""} />
               </>
             )}
           </div>
