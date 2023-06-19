@@ -1,80 +1,68 @@
-// 'use client'
-// import React, { useState } from 'react';
-// import './DetailExplanationBtn.css';
-// import Example from '../SubTopicCompoenents/Example/page';
-// import QueAns from '../SubTopicCompoenents/QueAns/page';
-// import QuizTest from '../SubTopicCompoenents/QuizTest/page';
-// import Simplify from '../SubTopicCompoenents/Simplify/page';
+'use client'
+import React, { useState } from 'react';
+import Simplify from '../SubTopicCompoenents/Simplify/page';
+import Example from '../SubTopicCompoenents/Example/page';
+import QueAns from '../SubTopicCompoenents/QueAns/page';
+import QuizTest from '../SubTopicCompoenents/QuizTest/page';
 
-// interface DetailExplanationProps {
-//   Explanation: string;
-// // Add index signature
-// }
-
-// const DetailExplanation: React.FC<DetailExplanationProps> = ({ Explanation, ...rest }) => {
-//   const [currentPage, setCurrentPage] = useState('');
-//   const [data, setData] = useState('');
-
-//   const handleClick = (pageName: string) => {
-//     setCurrentPage(pageName);
-//     setData(Explanation);
-//   };
-
-//   const renderPage = () => {
-//     if (currentPage === 'Simplify') {
-//       return <Simplify Data={data} />;
-//     } else if (currentPage === 'Example') {
-//       return <Example Data={data} />;
-//     } else if (currentPage === 'Q/A') {
-//       return <QueAns Data={data} />;
-//     } else if (currentPage === 'Take Test') {
-//       return <QuizTest Data={data} />;
-//     }
-//     return null;
-//   };
-
-//   return (
-//     <section className='flex flex-col'>
-//       <div className='grid grid-cols-2 gap-4 lg:grid-cols-6 sm:grid-cols-2'>
-//         <div>
-//           <button className='button' onClick={() => handleClick('Simplify')}>
-//             Simplify
-//           </button>
-//         </div>
-//         <div>
-//           <button className='button' onClick={() => handleClick('Example')}>
-//             Example
-//           </button>
-//         </div>
-//         <div>
-//           <button className='button' onClick={() => handleClick('Q/A')}>
-//             Q/A
-//           </button>
-//         </div>
-//         <div>
-//           <button className='button' onClick={() => handleClick('Take Test')}>
-//             Quiz
-//           </button>
-//         </div>
-//       </div>
-
-//       <div className='mt-4'>{renderPage()}</div>
-//     </section>
-//   );
-// };
-
-// export default DetailExplanation;
-import React from 'react';
-
-interface PageProps {
-  Explanantion : string;
+interface DetailExplanationProps {
+  Explanation: string;
 }
 
-const Page: React.FC<PageProps> = ({ Explanantion }) => {
+type PageName = 'Simplify' | 'Example' | 'Q/A' | 'Take Test';
+
+const DetailExplanation: React.FC<DetailExplanationProps> = ({ Explanation }) => {
+  const [currentPage, setCurrentPage] = useState<PageName>('Simplify');
+  const [data, setData] = useState<string | null>(null);
+
+  const handleClick = (pageName: PageName) => {
+    setCurrentPage(pageName);
+    setData(Explanation);
+  };
+
+  const renderPage = (): React.ReactNode => {
+    if (currentPage === 'Simplify') {
+      if (data !== null) {
+        return <Simplify Data={data || ''} />;
+      }
+    } else if (currentPage === 'Example') {
+      return <Example Data={data || ''} />;
+    } else if (currentPage === 'Q/A') {
+      return <QueAns Data={data || ''} />;
+    } else if (currentPage === 'Take Test') {
+      return <QuizTest Data={data || ''} />;
+    }
+    return null;
+  };
+
   return (
-    <div>{Explanantion }</div>
+    <section className='flex flex-col'>
+      <div className='grid grid-cols-2 gap-4 lg:grid-cols-6 sm:grid-cols-2'>
+        <div>
+          <button className='button' onClick={() => handleClick('Simplify')}>
+            Simplify
+          </button>
+        </div>
+        <div>
+          <button className='button' onClick={() => handleClick('Example')}>
+            Example
+          </button>
+        </div>
+        <div>
+          <button className='button' onClick={() => handleClick('Q/A')}>
+            Q/A
+          </button>
+        </div>
+        <div>
+          <button className='button' onClick={() => handleClick('Take Test')}>
+            Quiz
+          </button>
+        </div>
+      </div>
+
+      <div className='mt-4'>{renderPage()}</div>
+    </section>
   );
 };
 
-export default Page;
-
+export default DetailExplanation;

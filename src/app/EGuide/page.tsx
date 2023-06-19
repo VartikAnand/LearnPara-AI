@@ -1,10 +1,15 @@
-import Coding from '@/components/UnderCounstuction/Coding/Coding'
-import React from 'react'
+import Sidebar from '@/components/sidebar/Sidebar';
+import React from 'react';
 
-const page = () => {
+const Page: React.FC = () => {
   return (
-    <Coding/>
-  )
-}
+    <div className="flex h-[100vh]">
+      <Sidebar />
+      <div className="bg-green-300 flex-grow">
+        show page
+      </div>
+    </div>
+  );
+};
 
-export default page
+export default Page;

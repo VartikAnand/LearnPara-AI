@@ -414,3 +414,70 @@ button {
    bottom: 100%;
   }
  }
+
+ /* side bar css */
+
+
+
+
+.sidebar{
+ width: 260px;
+ flex-shrink: 0;
+ height: 100%;
+ overflow: auto;
+ /* background: green; */
+}
+
+
+.sidebar-item{
+ padding: .75em 1em;
+ display: block;
+ transition: background-color .15s;
+ border-radius: 5px;
+}
+.sidebar-item:hover{
+ background-color: rgba(255, 255, 255, .1);
+}
+
+.sidebar-title{
+ display: flex;
+ font-size: 1.2em;
+ justify-content: space-between;
+}
+.sidebar-title span i{
+ display: inline-block;
+ width: 1.5em;
+}
+.sidebar-title .toggle-btn{
+ cursor: pointer;
+ transition: transform .3s;
+}
+.sidebar-item.open > .sidebar-title .toggle-btn{
+ transform: rotate(90deg);
+}
+.sidebar-content{
+ padding-top: .25em;
+ height: 0;
+ overflow: hidden;
+}
+.sidebar-item.open > .sidebar-content{
+ height: auto;
+}
+
+.sidebar-item.plain{
+ color: grey;
+ text-decoration: none;
+}
+.sidebar-item.plain:hover{
+ /* text-decoration: underline; */
+ /* background: #28b800eb; */
+ cursor: pointer;
+  min-width: fit-content;
+  padding: 0.5rem; 
+  background-color: #34d399; /* Replace #34d399 with the desired hover background color */
+  border-radius: 0.25rem;
+}
+.sidebar-item.plain i{
+ display: inline-block;
+ width: 1.7em;
+}
