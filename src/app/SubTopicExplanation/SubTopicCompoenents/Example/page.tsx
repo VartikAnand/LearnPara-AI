@@ -1,11 +1,10 @@
-import React from 'react';
 
-interface ExampleProps {
-  Data: string;
+import React from 'react'
+
+const page = () => {
+  return (
+    <div>page</div>
+  )
 }
 
-const Example: React.FC<ExampleProps> = ({ Data }) => {
-  return <div>Example</div>;
-};
-
-export default Example;
+export default page

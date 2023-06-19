@@ -1,11 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-interface QueAnsProps {
-  Data: string;
+const page = () => {
+  return (
+    <div>page</div>
+  )
 }
 
-const QueAns: React.FC<QueAnsProps> = ({ Data }) => {
-  return <div>QueAns</div>;
-};
-
-export default QueAns;
+export default page

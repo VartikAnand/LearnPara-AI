@@ -141,7 +141,7 @@ const Page: React.FC = () => {
         </div>
       </section>
       <div className="border-b-2  bg-white mt-4"></div>
-      <section className="flex flex-col lg:flex-row md:flex-row md:flex-wrap gap-2 p-2 pt-2">
+      <section className="flex flex-col h-[90vh] lg:flex-row md:flex-row md:flex-wrap gap-2 p-2 pt-2">
         <div className="first-div  lg:w-1/4 sm:w-full">
           {isLoadingOrError ? (
             <div className="flex flex-col justify-center align-middle items-center pt-10 m-10 gap-5">
