@@ -128,10 +128,10 @@ const Page: React.FC = () => {
   const isLoadingOrError = isLoading || error;
 
   return (
-    <div >
+    <div className="h-[100vh]" >
       <section className="flex px-2 justify-between pt-3">
         {/* Chapter Header */}
-        <div className="">
+        <div>
           <h1 className="text-2xl lg:pl-8 pt-2 font-medium">
             {filteredChapter}
           </h1>
@@ -140,7 +140,7 @@ const Page: React.FC = () => {
           <ShareBtn />
         </div>
       </section>
-      <div className="border-b-2 bg-white mt-4"></div>
+      <div className="border-b-2  bg-white mt-4"></div>
       <section className="flex flex-col lg:flex-row md:flex-row md:flex-wrap gap-2 p-2 pt-2">
         <div className="first-div  lg:w-1/4 sm:w-full">
           {isLoadingOrError ? (
@@ -167,7 +167,7 @@ const Page: React.FC = () => {
           )}
         </div>
         <div
-          className=" lg:w-2/3 sm:w-full max-xl:2/3 lg:border-l-2 p-2 flex-shrink-0"
+          className="h-[100vh] lg:w-2/3 sm:w-full max-xl:2/3 lg:border-l-2 p-2 flex-shrink-0"
           ref={scrollRef}
         >
           {/* Render the explanation for the selected chapter here */}
