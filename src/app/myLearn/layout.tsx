@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <div> 
-      <div className="bg-yellow-400 w-full">va</div>
+      <div className="bg-yellow-400 w-full flex justify-center">Dev by Vartik Anand</div>
       {children}</div>
   );
 }
