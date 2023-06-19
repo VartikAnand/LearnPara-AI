@@ -1,9 +1,14 @@
+import Coding from '@/components/UnderCounstuction/Coding/Coding'
 import React from 'react'
 
-const page = () => {
+const QuizTest = () => {
   return (
-    <div>page</div>
+    <div>
+      
+      <Coding/>
+
+      QuizTest</div>
   )
 }
 
-export default page
+export default QuizTest

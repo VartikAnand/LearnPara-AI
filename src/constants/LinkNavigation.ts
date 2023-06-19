@@ -4,7 +4,7 @@ export const NavbarLinks = [
   {
     id: 1,
     title: "E-Guide",
-    url: "/EGuide",
+    url: "/myLearn",
   },
   {
     id: 3,

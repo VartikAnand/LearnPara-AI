@@ -1,9 +1,21 @@
-import React from 'react'
+'use client'
+import Coding from '@/components/UnderCounstuction/Coding/Coding';
+import React, { useState } from 'react';
 
-const page = () => {
-  return (
-    <div>page</div>
-  )
+interface SimplifyProps {
+  Data: string;
 }
 
-export default page
+const Simplify: React.FC<SimplifyProps> = ({ Data }) => {
+
+
+  return (
+    <div>
+      <h2>Simplify</h2>
+      <Coding/>
+      {/* <p>{Data}</p> */}
+    </div>
+  );
+};
+
+export default Simplify;
