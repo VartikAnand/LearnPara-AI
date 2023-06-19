@@ -167,7 +167,7 @@ const Page: React.FC = () => {
           )}
         </div>
         <div
-          className="h-[100vh] lg:w-2/3 sm:w-full max-xl:2/3 lg:border-l-2 p-2 flex-shrink-0"
+          className="overflow-auto lg:w-2/3 sm:w-full max-xl:2/3 lg:border-l-2 p-2 flex-shrink-0"
           ref={scrollRef}
         >
           {/* Render the explanation for the selected chapter here */}
