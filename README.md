@@ -10,7 +10,7 @@ Welcome to LearnPara AI, an AI-powered platform designed to help you learn any s
 
 To get started, follow these steps:
 
-1. Visit our website at [LearnPara](https://www.learnpara.com).
+1. Visit our website at [LearnPara](https://learnpara.vercel.app/).
 2. On the homepage, you will find the "LearnPara AI" section.
 3. Enter your desired subject or topic into the input field.
 4. Click the "Generate Modules" button.
@@ -37,13 +37,14 @@ Below the detailed explanation, you will find five buttons: Detail, Simplify, Ex
 
 ## Screenshots
 
-### Homepage
+## Homepage 
+####Light 
 
-![Homepage](homepage.png)
+![Homepage](homepage.light.png)
 
-### Output
+#### Dark
 
-![Output](output.png)
+![Output](output.dark.png)
 
 ## Installation
 
