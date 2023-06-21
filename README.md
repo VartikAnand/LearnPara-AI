@@ -44,7 +44,7 @@ Below the detailed explanation, you will find five buttons: Detail, Simplify, Ex
 
 #### Dark
 
-![Output](output.dark.png)
+![Output](homepage.dark.png)
 
 ## Installation
 
