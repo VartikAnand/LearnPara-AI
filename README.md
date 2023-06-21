@@ -1,34 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LearnPara AI
+
+![Output](output.png)
+
+## Introduction
+
+Welcome to LearnPara AI, an AI-powered platform designed to help you learn any subject or topic. Whether you're interested in Java, Python, C#, or any other subject, our intelligent system will generate the best topic modules for you to learn. This documentation will guide you through the various features and functionalities of our website.
 
 ## Getting Started
 
-First, run the development server:
+To get started, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Visit our website at [LearnPara](https://www.learnpara.com).
+2. On the homepage, you will find the "LearnPara AI" section.
+3. Enter your desired subject or topic into the input field.
+4. Click the "Generate Modules" button.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Module Selection
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Once you have generated the modules for your chosen topic, you will see a list of modules displayed on the screen. Each module represents a specific aspect or subtopic of the subject you entered.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Click on any module to explore its subtopics. The subtopics will be displayed as a list. Click on a subtopic to view its detailed information.
 
-## Learn More
+## Detailed Information
 
-To learn more about Next.js, take a look at the following resources:
+When you select a subtopic, you will be presented with a detailed explanation of that particular topic. You can click the "Detail" button to expand and get the detailed information.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Examples and Q&A
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Below the detailed explanation, you will find five buttons: Detail, Simplify, Example, Q&A, and Quiz Test.
 
-## Deploy on Vercel
+- **Detail**: Clicking this button will display the detailed explanation in a point-by-point format, making it easier to grasp the key concepts.
+- **Simplify**: This button provides a simplified version of the topic's definition and explanation.
+- **Example**: Click this button to access real-world examples related to the topic.
+- **Q&A**: This button will generate questions and answers based on the subtopic's explanation. It's useful for exam preparation and interviews.
+- **Quiz Test**: By clicking this button, you can test your knowledge by taking a quiz based on the subtopic. It helps you evaluate your understanding and retention of the topic.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Screenshots
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Homepage
+
+![Homepage](homepage.png)
+
+### Output
+
+![Output](output.png)
+
+## Installation
+
+1. Clone the repository: `git clone https://github.com/VartikAnand/LearnPara-AI.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+4. Open your browser and visit: `http://localhost:3000`
+
+##Contributing
+
+We welcome contributions from developers who are interested in improving LearnPara AI. If you would like to contribute, please contact us at (#vartikkanand@gmail.com)
+
+That's it! You should now be able to access and use LearnPara AI on your local machine.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
