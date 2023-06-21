@@ -54,7 +54,7 @@ Below the detailed explanation, you will find five buttons: Detail, Simplify, Ex
 
 ##Contributing
 
-We welcome contributions from developers who are interested in improving LearnPara AI. If you would like to contribute, please contact us at (#vartikkanand@gmail.com)
+We welcome contributions from developers who are interested in improving LearnPara AI. If you would like to contribute, please contact us at vartikkanand@gmail.com
 
 That's it! You should now be able to access and use LearnPara AI on your local machine.
 
