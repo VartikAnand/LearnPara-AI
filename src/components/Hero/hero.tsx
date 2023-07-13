@@ -43,8 +43,7 @@ const Hero = () => {
       },
       data: {
         question: generatePrompt(searchQuery),
-        bing_u_cookie:'b'
-          // "1uACDDkagIiz-j854cvfHNtcjIONbSPdRX12UIiQPYoS1CYoUqq0klfb6KukanAqllJg65-8tM5-C-c7Kl6gNrbH4yHuWwh2_GSrNxCop7c6N7DqWSMfH7u4innyhHO-w_tCwUD6NjZt8fxquLoJcErHfryj2dZ5BkMIGV5Lk4qpIKhXf8Of5NZfmlRHdhlx6236TquiN9-7nDBrG9qdEg",
+        bing_u_cookie:'vartikanand'
       },
     };
 
