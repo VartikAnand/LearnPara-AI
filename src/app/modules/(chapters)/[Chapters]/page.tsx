@@ -62,7 +62,7 @@ const Page: React.FC = () => {
       },
       data: {
         question: generatePrompt(`${chapter}`),
-        bing_u_cookie: "vartik",
+        bing_u_cookie: "vartikanand",
       },
     };
 
