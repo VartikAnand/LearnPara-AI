@@ -54,7 +54,7 @@ const SubTopicExplanation: React.FC<SubTopicExplanationProps> = ({
       },
       data: {
         question,
-        bing_u_cookie: "b",
+        bing_u_cookie: "vartikanand",
       },
     };
 
